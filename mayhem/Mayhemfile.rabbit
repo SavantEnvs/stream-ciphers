@@ -1,0 +1,12 @@
+project: savantenvs/stream-ciphers
+target: rabbit-buggy-mhh-run-1
+
+# libFuzzer harness (libfuzzer-sys). Built by mayhem/build.sh to /mayhem/bin/rabbit
+# (/mayhem/rabbit is the upstream crate dir, so the binary goes under /mayhem/bin/).
+# origin: https://app.mayhem.security/mayhemheroes/stream-ciphers/rabbit/1
+
+cmds:
+    - cmd: /mayhem/bin/rabbit
+      libfuzzer: true
+      env:
+        TMPDIR: /tmp

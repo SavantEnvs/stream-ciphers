@@ -1,0 +1,12 @@
+project: savantenvs/stream-ciphers
+target: hc-256-buggy-mhh-run-1
+
+# libFuzzer harness (libfuzzer-sys). Built by mayhem/build.sh to /mayhem/bin/hc-256
+# (/mayhem/hc-256 is the upstream crate dir, so the binary goes under /mayhem/bin/).
+# origin: https://app.mayhem.security/mayhemheroes/stream-ciphers/hc-256/1
+
+cmds:
+    - cmd: /mayhem/bin/hc-256
+      libfuzzer: true
+      env:
+        TMPDIR: /tmp
